@@ -150,12 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f42760e94d9242448c4f848472dac1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: 4
+  openingDirection: 04000000
   doors:
   - {fileID: 4366431638042821890}
   - {fileID: 4366431639069267428}
   - {fileID: 4366431637684269279}
   - {fileID: 4366431637422603588}
+  entranceDirection: 0
   spawned: 0
   waitTime: 1
   roomLayer:
