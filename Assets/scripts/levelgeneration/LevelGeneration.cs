@@ -32,39 +32,39 @@ public class LevelGeneration : MonoBehaviour
     {
         
         //if can go this direction
-        if (CorrectOpeningDirection(1)&&!CorrectOpeningDirection(entranceDirection))
+        if (CorrectOpeningDirection(1))
         {
             if (Physics2D.OverlapCircle(doors[0].position, 0.5f, roomLayer))
             {
                 //but there is a room in the way
-                print("wow");
+                
             }
         }
         //if can go this direction
-        if (CorrectOpeningDirection(2) && !CorrectOpeningDirection(entranceDirection))
+        if (CorrectOpeningDirection(2))
         {
             if (Physics2D.OverlapCircle(doors[1].position, 0.5f, roomLayer))
             {
                 //but there is a room in the way
-                print("wow");
+                
             }
         }
         //if can go this direction
-        if (CorrectOpeningDirection(3) && !CorrectOpeningDirection(entranceDirection))
+        if (CorrectOpeningDirection(3))
         {
             if (Physics2D.OverlapCircle(doors[2].position, 0.5f, roomLayer))
             {
                 //but there is a room in the way
-                print("wow");
+                
             }
         }
         //if can go this direction
-        if (CorrectOpeningDirection(4) && !CorrectOpeningDirection(entranceDirection))
+        if (CorrectOpeningDirection(4))
         {
             if (Physics2D.OverlapCircle(doors[3].position, 0.5f, roomLayer))
             {
                 //but there is a room in the way
-                print("wow");
+                
             }
         }
         //if there are 2 or more bad rooms
@@ -74,25 +74,35 @@ public class LevelGeneration : MonoBehaviour
 
     void SpawnRooms(bool reset)
     {
+        int amount = 0;
         //spawn Bottom
         if (CorrectOpeningDirection(1)&&!Physics2D.OverlapCircle(doors[0].position,0.5f,roomLayer))
         {
             BottomRoom(reset);
+            amount++;
         }
         //spawn Top
         if (CorrectOpeningDirection(2) && !Physics2D.OverlapCircle(doors[1].position, 0.5f, roomLayer))
         {
             TopRoom(reset);
+            amount++;
         }
         //spawn left
         if (CorrectOpeningDirection(3) && !Physics2D.OverlapCircle(doors[2].position, 0.5f, roomLayer))
         {
             LeftRoom(reset);
+            amount++;
         }
         //spawn right
         if (CorrectOpeningDirection(4) && !Physics2D.OverlapCircle(doors[3].position, 0.5f, roomLayer))
         {
             RightRoom(reset);
+            amount++;
+        }
+        if (amount==0)
+        {
+            //not possible to spawn rooms
+            print("this is a bug, yeah");
         }
         
     }
