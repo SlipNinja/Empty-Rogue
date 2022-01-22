@@ -8,6 +8,7 @@ public class weapon : MonoBehaviour
     [Space]
     public GameObject bulletPrefab;
     public float launchForce;
+    float launchForce2;
     public Transform shotPoint;
     public float Firerate;
     float timeSinceLastShot;
@@ -26,6 +27,7 @@ public class weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        launchForce2 = launchForce;
         if (playerControlled)
         {
 
@@ -49,9 +51,25 @@ public class weapon : MonoBehaviour
         if (playerControlled) {
             Vector2 weaponPos = transform.position;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = mousePos - weaponPos;
-            transform.right = direction;
+            if (transform.parent.localScale.x > 0)
+            {
+                direction = mousePos - weaponPos;
+                
+                transform.right = direction;
+                launchForce = launchForce2;
+            }
+            else
+            {
 
+                //direction = weaponPos - mousePos;
+                direction = mousePos - weaponPos;
+                transform.right = direction*-1;
+                
+                launchForce = -launchForce2;
+                
+            }
+            
+            
 
 
             if (Input.GetMouseButtonDown(0))
@@ -86,7 +104,14 @@ public class weapon : MonoBehaviour
 
     Vector2 PointPosition(float t)
     {
-        Vector2 pos = (Vector2)shotPoint.position + (direction.normalized * launchForce*t)+0.5f*Physics2D.gravity*(t*t);
+        Vector2 pos;
+        if (launchForce>0) {
+            pos = (Vector2)shotPoint.position + ((direction).normalized * launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
+        }
+        else
+        {
+            pos = (Vector2)shotPoint.position + ((direction*-1).normalized * launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
+        }
         return pos;
     }
 }

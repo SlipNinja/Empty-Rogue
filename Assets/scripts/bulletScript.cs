@@ -28,6 +28,6 @@ public class bulletScript : MonoBehaviour
     {
         hit = true;
         rb.velocity = Vector2.zero;
-        Destroy(gameObject,1);
+        Destroy(gameObject);
     }
 }
