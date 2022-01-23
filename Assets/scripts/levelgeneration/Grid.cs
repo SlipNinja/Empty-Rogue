@@ -76,8 +76,10 @@ public class Grid : MonoBehaviour
         // }
     }
 
-    public Cell GetPlayerSpawnCell()
+    public List<Cell> GetPossibleSpawns()
     {
+        List<Cell> spawns = new List<Cell>();
+
         for (int w=0; w <= width; w++)
         {
             for (int h=0; h <= height; h++)
@@ -88,7 +90,29 @@ public class Grid : MonoBehaviour
                     Cell spawnCell = GetCell(w, h-1);
                     if(spawnCell)
                     {
-                        return spawnCell;
+                        spawns.Add(spawnCell);
+                    }
+                }
+            }
+        }
+
+        return spawns;
+    }
+
+    public Cell GetPlayerSpawnCell()
+    {
+        for (int w=0; w <= width; w++)
+        {
+            for (int h=0; h <= height; h++)
+            {
+                Cell tmpCell = GetCell(w, h);
+                if(!tmpCell)
+                {
+                    Cell underCell = GetCell(w, h-1);
+                    Cell rightCell = GetCell(w + 1, h);
+                    if(underCell && !rightCell)
+                    {
+                        return underCell;
                     }
                 }
             }

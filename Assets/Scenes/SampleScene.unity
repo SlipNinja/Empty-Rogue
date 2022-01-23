@@ -387,6 +387,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5811012585316796409, guid: 9f901d199f101a44ca0dce2f833d448c, type: 3}
   gridPrefab: {fileID: 2034533417607489113, guid: af8776fd616e1304fbede0f4f2e6d1ad, type: 3}
+  coin: {fileID: 6534948346999507032, guid: 458b132dad85b784f84bd315ed101ba8, type: 3}
+  weapons:
+  - {fileID: 4728229192804090715, guid: d1914f61970f7cd47a618fab5f1e96e5, type: 3}
+  - {fileID: 5916771314823624023, guid: b981070cc3c6744449de90dc96422155, type: 3}
+  - {fileID: 2888413106796713314, guid: 29177e6bacb66dc45b3cdfce2668d357, type: 3}
+  - {fileID: 7794591506258255707, guid: f48c5193746864845971751fa52fb2ce, type: 3}
+  ennemies:
+  - {fileID: 1570799068861242977, guid: 9f861125791434a4eb048f505237c46b, type: 3}
+  - {fileID: 3944695207539132752, guid: 4da18ac32282d154896b46c02338ad1d, type: 3}
+  - {fileID: 2849817540271027291, guid: 4220a921afd5a19498689aa66d926685, type: 3}
+  - {fileID: 5886024148641437132, guid: cd406536c2df4c645bd3cffcc2c03282, type: 3}
+  spawnCoinDelayInSeconds: 5
+  spawnWeaponDelayInSeconds: 20
+  spawnEnnemyDelayInSeconds: 3
 --- !u!4 &1998318502
 Transform:
   m_ObjectHideFlags: 0
