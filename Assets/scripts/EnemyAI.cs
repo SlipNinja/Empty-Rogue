@@ -236,22 +236,28 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag=="Bullet")
         {
-            health--;
-            healthSlider.value = health;
-            Destroy(collision.gameObject);
-            if (health<=0)
-            {
-                rb.velocity = Vector2.zero;
-                StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime,screenshakeAmount)); 
-                Instantiate(explosion, transform.position,explosion.transform.rotation);
-                GetComponent<EnemyAI>().enabled = false;
-                GetComponent<SpriteRenderer>().sprite = null;
-                healthSlider.gameObject.SetActive(false);
-                weapon.gameObject.SetActive(false);
-                Destroy(gameObject,1);
-            }
-            else { StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime/2, screenshakeAmount/2)); }
+            takeDamage(collision.gameObject);
         }
+    }
+
+    public void takeDamage(GameObject bullet)
+    {
+        health-=bullet.GetComponent<bulletScript>().damage;
+        healthSlider.value = health;
+        
+        if (health <= 0)
+        {
+            rb.velocity = Vector2.zero;
+            StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime, screenshakeAmount));
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
+            
+            GetComponent<SpriteRenderer>().sprite = null;
+            healthSlider.gameObject.SetActive(false);
+            weapon.gameObject.SetActive(false);
+            GetComponent<EnemyAI>().enabled = false;
+            Destroy(gameObject,0.1f);
+        }
+        else { StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime / 2, screenshakeAmount / 2)); }
     }
 
 }

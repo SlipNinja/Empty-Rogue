@@ -72,7 +72,7 @@ public class weapon : MonoBehaviour
             
 
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 shoot();
             }

@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - screenshake
   - ui
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - roomLayer
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

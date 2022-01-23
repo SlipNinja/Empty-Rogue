@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 3944695207539132759}
   - component: {fileID: 3944695207539132756}
   - component: {fileID: 6629182811395532844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   speed: 5
   jumpHeight: 2
   jumpCooldown: 5
-  health: 3
+  health: 100
   AttackDistance: 3
   groundcheck: {fileID: 3944695208348004539}
   LOSpoint: {fileID: 252769250525378532}
@@ -400,7 +400,7 @@ MonoBehaviour:
   timeToStopChasing: 3
   healthSlider: {fileID: 7890099378048900273}
   explosion: {fileID: 4817874253256996599, guid: 32f974668bd8ec64cb0be292575aee11, type: 3}
-  screenshakeAmount: 0.5
+  screenshakeAmount: 0.4
   screenshakeTime: 0.2
   animator: {fileID: 6629182811395532844}
 --- !u!58 &3944695207539132759

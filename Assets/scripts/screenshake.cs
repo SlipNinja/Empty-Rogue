@@ -25,7 +25,7 @@ public class screenshake : MonoBehaviour
             float x = Random.Range(-1f,1f)*magnitude;
             float y = Random.Range(-1f,1f)*magnitude;
 
-            cam.position = new Vector3(x, y, originalPos.z);
+            cam.localPosition = new Vector3(x, y, originalPos.z);
 
             elapsed += Time.deltaTime;
 

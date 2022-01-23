@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
+    public float lifeTime=10;
+    public float damage;
+    [Space]
+    public int bouncetimes=1;
+    public bool ExplodedsOnImpact;
+    public GameObject explosion;
+    public float explosionRadius;
+    public float explosionForce;
+    public float explosionDamage;
+    public LayerMask enemyLayer;
     Rigidbody2D rb;
     bool hit;
 
@@ -26,8 +36,25 @@ public class bulletScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hit = true;
-        rb.velocity = Vector2.zero;
-        Destroy(gameObject);
+        if (bouncetimes<=1||collision.gameObject.tag=="enemy") {
+            hit = true;
+            rb.velocity = Vector2.zero;
+            
+            if (ExplodedsOnImpact)
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,explosionRadius, enemyLayer);
+                print(objects.Length);
+                foreach(Collider2D obj in objects)
+                {
+                    Vector2 direction = obj.transform.position - transform.position;
+                    obj.GetComponent<Rigidbody2D>().AddForce(direction * explosionForce);
+                    obj.GetComponent<EnemyAI>().takeDamage(gameObject);
+                    print("take damage");
+                }
+            }
+            Destroy(gameObject);
+        }
+        else { bouncetimes--; }
     }
 }
