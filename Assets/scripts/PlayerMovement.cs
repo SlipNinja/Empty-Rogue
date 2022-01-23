@@ -11,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 11f;
     private float jumpingPower = 19f;
     private bool isFacingRight = true;
+    [Space]
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -58,5 +65,13 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+
+        
+        if (horizontal!=0)
+        {
+            animator.Play("playeranimation");
+        }
+        
+            
     }
 }

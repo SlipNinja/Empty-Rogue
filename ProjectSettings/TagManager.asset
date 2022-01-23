@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Rooms
   - room
+  - Bullet
+  - screenshake
+  - ui
+  - enemy
+  - fuel
   layers:
   - Default
   - TransparentFX
@@ -15,6 +20,7 @@ TagManager:
   - UI
   - roomLayer
   - Ground
+  - Enemy
   - 
   - 
   - 
@@ -37,8 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Player
   m_SortingLayers:
   - name: Default
     uniqueID: 0
