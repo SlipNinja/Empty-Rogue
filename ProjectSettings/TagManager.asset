@@ -10,6 +10,7 @@ TagManager:
   - screenshake
   - ui
   - enemy
+  - fuel
   layers:
   - Default
   - TransparentFX

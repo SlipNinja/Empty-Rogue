@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     public float jumpHeight = 10;
     public float jumpCooldown = 5;
     public float health=3;
+    public float fuelOnDeath=10;
     float timeSinceLastJumped;
     public float AttackDistance;
     public Transform groundcheck;
@@ -255,6 +256,8 @@ public class EnemyAI : MonoBehaviour
             healthSlider.gameObject.SetActive(false);
             weapon.gameObject.SetActive(false);
             GetComponent<EnemyAI>().enabled = false;
+            GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().changeFuel(fuelOnDeath);
+            print("givefuel");
             Destroy(gameObject,0.1f);
         }
         else { StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime / 2, screenshakeAmount / 2)); }
