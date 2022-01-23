@@ -11,14 +11,16 @@ public class loadScene : MonoBehaviour
 
     public void loadLevel()
     {
-
-
+        
 
         //play audio
         FindObjectOfType<AudioManager>().play("startGame");
 
-
-        Invoke("loadLevelWithDelay", 2.5f);
+        if (loadThisLevel)
+        {
+            Invoke("loadLevelWithDelay", 2.5f);
+        }
+        else { loadLevelWithDelay(); }
         
 
         

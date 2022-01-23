@@ -33,10 +33,10 @@ public class Grid : MonoBehaviour
 
     private bool PlayerAtTheEnd()
     {
-        if(Input.GetKeyDown(KeyCode.Space))// To change
+        /*if(Input.GetKeyDown(KeyCode.Space))// To change
         {
             return true;
-        }
+        }*/
 
         return false;
     }
