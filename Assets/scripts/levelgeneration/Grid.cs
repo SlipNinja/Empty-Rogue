@@ -8,9 +8,11 @@ public class Grid : MonoBehaviour
     public GameObject cellPrefab;
     public int width;
     public int height;
+    public int maxVariations;
 
     private GameObject cellInstance;
     private List<Cell> cells;
+    private int hillPoint;
 
     void Start()
     {
@@ -28,10 +30,14 @@ public class Grid : MonoBehaviour
     {
 
         GenerateBounds();
+        ChooseHillPoint();
 
-        SetAllNeighbours();
-
-        //GenerateVariations();
+        for(int i = 0; i < maxVariations; i++)
+        {
+            SetAllNeighbours();
+            GenerateVariations(i);
+        }
+        
 
         // for (int w=0; w <= width; w++)
         // {
@@ -44,19 +50,55 @@ public class Grid : MonoBehaviour
         // }
     }
 
-    private void GenerateVariations()
+    private void GenerateVariations(int variationNumber)
     {
-        foreach (Cell c in cells)
+        List<Cell> tmpCells = new List<Cell>(cells);
+        foreach (Cell c in tmpCells)
         {
+            int distWithHill = Mathf.Abs(hillPoint - c.GetCoordinates().x);
             foreach (KeyValuePair<string, Cell> neighbour in c.neighbours)
             {
                 if(neighbour.Value == null)
                 {
-                    Vector2Int newCoords = GetCellCoords(neighbour.Key, c.GetCoordinates());
-                    CreateCell(newCoords);
+                    int chances;
+
+                    if(distWithHill < 5)
+                    {
+                        chances = 10;
+                    }
+                    
+                    else if(distWithHill < 10)
+                    {
+                        chances = 9;
+                    }
+                    
+                    else if(distWithHill < 15)
+                    {
+                        chances = 8;
+                    }
+
+                    else
+                    {
+                        chances = 5;
+                    }
+
+                    chances -= (int)variationNumber/2;
+                    Mathf.Clamp(chances, 0, 10);
+
+                    int tmp = Random.Range(0, maxVariations);
+                    if(tmp<chances)
+                    {
+                        Vector2Int newCoords = GetCellCoords(neighbour.Key, c.GetCoordinates());
+                        CreateCell(newCoords);
+                    }
                 }
             }
         }
+    }
+
+    private void ChooseHillPoint()
+    {
+        hillPoint = Random.Range(1, width);
     }
 
     private void GenerateBounds()
@@ -82,12 +124,13 @@ public class Grid : MonoBehaviour
     {
         if(GetCell(coords.x, coords.y))
         {
-            Debug.Log("Already exist : " + coords.x + " : " + coords.y);
+            //Debug.Log("Already exist : " + coords.x + " : " + coords.y);
             return;
         }
 
         cellInstance = Instantiate(cellPrefab, new Vector3(coords.x, coords.y, 0), Quaternion.identity);
         Cell newCell = cellInstance.GetComponent<Cell>();
+        newCell.Init();
         newCell.SetCoordinates(coords.x, coords.y);
         newCell.transform.SetParent(transform);
         cells.Add(newCell);
@@ -150,15 +193,14 @@ public class Grid : MonoBehaviour
 
     private void SetNeighbours(Cell cell)
     {
-        if(cell.neighbours is null)
-        {
-            Debug.Log("IT'S NULL");
-            cell.neighbours = new Dictionary<string, Cell>();
-            //return;
-        }
         string[] directions = new string[4] {"north", "south", "east", "west"};
 
         Vector2Int tmpCoords = Vector2Int.zero;
+
+        // foreach (KeyValuePair<string, Cell> kvp in cell.neighbours)
+        // {
+            
+        // }
 
         foreach (string direction in directions)
         {
@@ -168,7 +210,15 @@ public class Grid : MonoBehaviour
 
             Cell neighbCell = GetCell((int)tmpCoords.x, (int)tmpCoords.y);
 
-            cell.neighbours.Add(direction, neighbCell);
+            if(cell.neighbours.ContainsKey(direction))
+            {
+                cell.neighbours[direction] = neighbCell;
+            }
+
+            else
+            {
+                cell.neighbours.Add(direction, neighbCell);
+            }
         }
     }
 

@@ -12,6 +12,16 @@ public class Cell : MonoBehaviour
 
     void Start()
     {
+        // neighbours.Add("north", null);
+        // neighbours.Add("south", null);
+        // neighbours.Add("east", null);
+        // neighbours.Add("west", null);
+
+        // Debug.Log("Cell at " + coordinates.x + " : " + coordinates.y + " has neighbours instanciated");
+    }
+
+    public void Init()
+    {
         neighbours = new Dictionary<string, Cell>();
     }
 
