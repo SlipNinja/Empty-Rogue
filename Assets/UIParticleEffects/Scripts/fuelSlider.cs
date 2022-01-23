@@ -9,6 +9,7 @@ public class fuelSlider : MonoBehaviour
     public float fuel;
     public float pityFuel=5;
     public Slider slider;
+    public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class fuelSlider : MonoBehaviour
         //checks if we lose
         if (fuel<=0-pityFuel)
         {
-            print("we lost");
+            loseScreen.SetActive(true);
         }
     }
 
