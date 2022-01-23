@@ -110,7 +110,9 @@ public class Grid : MonoBehaviour
                 {
                     Cell underCell = GetCell(w, h-1);
                     Cell rightCell = GetCell(w + 1, h);
-                    if(underCell && !rightCell)
+                    Cell leftCell = GetCell(w - 1, h);
+                    Cell upCell = GetCell(w, h + 1);
+                    if(underCell && !rightCell && !upCell && !leftCell)
                     {
                         return underCell;
                     }

@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         Cell spawn = GetRandomSpawn();
         Vector2Int coords = spawn.GetCoordinates();
 
-        GameObject ennemy = weapons.ElementAt(Random.Range(0, ennemies.Count));
+        GameObject ennemy = ennemies.ElementAt(Random.Range(0, ennemies.Count));
         GameObject newEnnemy = Instantiate(ennemy, new Vector3(coords.x, coords.y + 1, 0), Quaternion.identity);
         newEnnemy.transform.SetParent(transform);
     }
