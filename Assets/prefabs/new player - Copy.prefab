@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1182619165079024013}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182619164287149681
 GameObject:
@@ -63,7 +63,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1182619165079024013}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1182619164287149694
 Camera:
@@ -164,8 +164,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1182619163478978108}
   - {fileID: 1182619164287149680}
+  - {fileID: 1182619163478978108}
   - {fileID: 7846355952547047611}
   m_Father: {fileID: 4637482598804366802}
   m_RootOrder: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   fuelLoss: -5
   coinScore: 100
   weaponPickupScore: 1000
-  invincibilityTime: 1
+  invincibilityTime: 1.5
 --- !u!95 &1182619165079024011
 Animator:
   serializedVersion: 4
@@ -471,10 +471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1182619165079024013}
     m_Modifications:
-    - target: {fileID: 2888413106796713244, guid: 29177e6bacb66dc45b3cdfce2668d357, type: 3}
-      propertyPath: playerControlled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2888413106796713314, guid: 29177e6bacb66dc45b3cdfce2668d357, type: 3}
       propertyPath: m_Name
       value: lasergun

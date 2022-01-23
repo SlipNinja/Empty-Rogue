@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyState: 0
-  speed: 10
+  speed: 4
   jumpHeight: 3
   jumpCooldown: 4
   health: 200

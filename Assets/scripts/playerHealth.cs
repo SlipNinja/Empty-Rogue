@@ -26,7 +26,19 @@ public class playerHealth : MonoBehaviour
                 FindObjectOfType<AudioManager>().play("takeDamage");
             }
             Destroy(collision.gameObject);
-            
+
+            if (GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().fuel+fuelLoss<0- GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().pityFuel)
+            {
+                GetComponent<SpriteRenderer>().sprite = null;
+                GetComponent<PlayerMovement>().enabled= false;
+                gameObject.tag = "";
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+                for (int i = 0; i < enemies.Length; i++)
+                {
+                    enemies[i].GetComponent<EnemyAI>().takeDamage(null);
+                }
+                GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().fuel -= 9999;
+            }
         }
         
     }

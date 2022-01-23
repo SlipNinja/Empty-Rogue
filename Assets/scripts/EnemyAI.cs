@@ -247,7 +247,10 @@ public class EnemyAI : MonoBehaviour
 
     public void takeDamage(GameObject bullet)
     {
-        health-=bullet.GetComponent<bulletScript>().damage;
+        if (bullet!=null) {
+            health -= bullet.GetComponent<bulletScript>().damage;
+        }
+        else { health -= 99999; }
         healthSlider.value = health;
         
         if (health <= 0)

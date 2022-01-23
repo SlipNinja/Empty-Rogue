@@ -27,7 +27,7 @@ public class score : MonoBehaviour
     public void updateScore(float change)
     {
         Score += change;
-        scoretext.text = "SCORE: " + Score;
+        scoretext.text = "--SCORE--\n" + Score;
         textAnimation();
         if (scoretext.fontSize<maxTextSize&& scoretext.fontSize>15) {
             scoretext.fontSize = textSize + Random.Range(-textSizeIncriment, textSizeIncriment);

@@ -211,9 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyState: 0
-  speed: 3
+  speed: 2
   jumpHeight: 2
-  jumpCooldown: 10
+  jumpCooldown: 2
   health: 100
   fuelOnDeath: 10
   scoreOnDeath: 500

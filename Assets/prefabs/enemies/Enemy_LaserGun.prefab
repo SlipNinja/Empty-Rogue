@@ -388,13 +388,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyState: 0
-  speed: 7.5
-  jumpHeight: 2.5
-  jumpCooldown: 4
+  speed: 3
+  jumpHeight: 5
+  jumpCooldown: 2
   health: 100
   fuelOnDeath: 10
   scoreOnDeath: 500
-  AttackDistance: 5
+  AttackDistance: 10
   groundcheck: {fileID: 3944695208348004539}
   LOSpoint: {fileID: 252769250525378532}
   weapon: {fileID: 2888413106796713314, guid: 29177e6bacb66dc45b3cdfce2668d357, type: 3}
