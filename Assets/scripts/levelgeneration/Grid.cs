@@ -13,20 +13,46 @@ public class Grid : MonoBehaviour
     private GameObject cellInstance;
     private List<Cell> cells;
     private int hillPoint;
+    public bool end = false;
 
-    void Start()
+    void Awake()
     {
         cells = new List<Cell>();
 
-        GenerateLevel();
+        //GenerateLevel();
     }
 
     void Update()
     {
-        
+        if(end){
+            return;
+        }
+
+        end = PlayerAtTheEnd();
     }
 
-    private void GenerateLevel()
+    private bool PlayerAtTheEnd()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))// To change
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void DeleteLevel()
+    {
+        foreach (Cell c in cells.Reverse<Cell>())
+        {
+            if(c != null)
+                Destroy(c.gameObject);
+        }
+
+        cells.Clear();
+    }
+
+    public void GenerateLevel()
     {
 
         GenerateBounds();
@@ -48,6 +74,32 @@ public class Grid : MonoBehaviour
         //         cells.Add(cellInstance);
         //     }
         // }
+    }
+
+    public Cell GetPlayerSpawnCell()
+    {
+        for (int w=0; w <= width; w++)
+        {
+            for (int h=0; h <= height; h++)
+            {
+                Cell tmpCell = GetCell(w, h);
+                if(!tmpCell)
+                {
+                    Cell spawnCell = GetCell(w, h-1);
+                    if(spawnCell)
+                    {
+                        return spawnCell;
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public int CellCount()
+    {
+        return cells.Count;
     }
 
     private void GenerateVariations(int variationNumber)

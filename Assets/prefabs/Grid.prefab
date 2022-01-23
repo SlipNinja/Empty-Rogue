@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83bc078dfa28df046a8c3458c2765f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   cellPrefab: {fileID: 3479171342250521587, guid: e9d71b3cbc79d714991876ab8063627a, type: 3}
+  width: 300
+  height: 40
+  maxVariations: 15
