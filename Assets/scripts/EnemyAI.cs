@@ -209,6 +209,7 @@ public class EnemyAI : MonoBehaviour
         weapon = Instantiate(newWeapon,transform.position,newWeapon.transform.rotation, transform.parent);
         weapon.transform.SetParent(transform);
         weaponscript = weapon.GetComponent<weapon>();
+        weapon.GetComponent<Collider2D>().enabled = false;
         
     }
 

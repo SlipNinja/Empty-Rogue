@@ -7,6 +7,7 @@ public class fuelSlider : MonoBehaviour
 {
     public float maxFuel;
     public float fuel;
+    public float pityFuel=5;
     public Slider slider;
 
     // Start is called before the first frame update
@@ -33,6 +34,12 @@ public class fuelSlider : MonoBehaviour
         else {
             fuel = maxFuel;
             slider.value = fuel;
+        }
+
+        //checks if we lose
+        if (fuel<=0-pityFuel)
+        {
+            print("we lost");
         }
     }
 
