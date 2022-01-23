@@ -13,6 +13,7 @@ TagManager:
   - fuel
   - coin
   - score
+  - weapon
   layers:
   - Default
   - TransparentFX
