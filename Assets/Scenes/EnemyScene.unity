@@ -1785,6 +1785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1182619164287149694, guid: 9f901d199f101a44ca0dce2f833d448c, type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2973160045884695141, guid: 9f901d199f101a44ca0dce2f833d448c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.28
