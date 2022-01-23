@@ -11,6 +11,8 @@ TagManager:
   - ui
   - enemy
   - fuel
+  - coin
+  - score
   layers:
   - Default
   - TransparentFX

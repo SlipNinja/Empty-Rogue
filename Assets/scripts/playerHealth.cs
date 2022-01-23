@@ -5,7 +5,8 @@ using UnityEngine;
 public class playerHealth : MonoBehaviour
 {
 
-    public float health = 5;
+    public float fuelLoss = 5;
+    public float coinScore=100;
     // Start is called before the first frame update
 
 
@@ -14,8 +15,18 @@ public class playerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            health--;
-            
+            //we take damage
+            GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().changeFuel(fuelLoss);
+
+        }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "coin")
+        {
+            GameObject.FindGameObjectWithTag("score").GetComponent<score>().updateScore(coinScore);
+            Destroy(collision.gameObject);
         }
     }
 

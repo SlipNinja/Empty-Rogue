@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1182619165079024002}
   - component: {fileID: 1182619165079024012}
   - component: {fileID: 1182619165079024011}
+  - component: {fileID: 4240388616665832033}
   m_Layer: 31
   m_Name: Player
   m_TagString: Player
@@ -393,7 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dc6566918a687498374f24378e72d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  fuelLoss: -5
+  coinScore: 100
 --- !u!95 &1182619165079024011
 Animator:
   serializedVersion: 4
@@ -414,6 +416,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &4240388616665832033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182619165079024003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.85333335, y: 1.28}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5811012585316796409
 GameObject:
   m_ObjectHideFlags: 0
