@@ -44,7 +44,7 @@ public class bulletScript : MonoBehaviour
             {
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,explosionRadius, enemyLayer);
-                print(objects.Length);
+                
                 foreach(Collider2D obj in objects)
                 {
                     Vector2 direction = obj.transform.position - transform.position;

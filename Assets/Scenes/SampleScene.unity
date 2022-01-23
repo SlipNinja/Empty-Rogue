@@ -353,11 +353,15 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 2034533417607489113, guid: af8776fd616e1304fbede0f4f2e6d1ad, type: 3}
       propertyPath: width
-      value: 40
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2034533417607489113, guid: af8776fd616e1304fbede0f4f2e6d1ad, type: 3}
       propertyPath: height
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034533417607489113, guid: af8776fd616e1304fbede0f4f2e6d1ad, type: 3}
+      propertyPath: maxVariations
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2950673839882284082, guid: af8776fd616e1304fbede0f4f2e6d1ad, type: 3}
       propertyPath: m_RootOrder
