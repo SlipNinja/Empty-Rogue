@@ -123,9 +123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 10
   damage: 50
+  groundHitParticle: {fileID: 5062208430785890638, guid: 786965aade0fc7546a8b7a9ac38374c2, type: 3}
+  particleColor: {r: 0.14509805, g: 1, b: 0, a: 1}
   bouncetimes: 3
   ExplodedsOnImpact: 1
-  explosion: {fileID: 4817874253256996599, guid: 32f974668bd8ec64cb0be292575aee11, type: 3}
+  explosion: {fileID: 3064131421211107494, guid: f70eae6a82b07e140b5649bdd4b72059, type: 3}
   explosionRadius: 2
   explosionForce: 500
   explosionDamage: 25

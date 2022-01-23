@@ -146,3 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fb2af6dd5a7e24bb569ebeaa8a4134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 3
+  damage: 0
+  groundHitParticle: {fileID: 0}
+  particleColor: {r: 0, g: 0, b: 0, a: 0}
+  bouncetimes: 1
+  ExplodedsOnImpact: 0
+  explosion: {fileID: 0}
+  explosionRadius: 0
+  explosionForce: 0
+  explosionDamage: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

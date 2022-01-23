@@ -8,6 +8,8 @@ public class playerHealth : MonoBehaviour
     public float fuelLoss = 5;
     public float coinScore=100;
     public float weaponPickupScore = 1000;
+    public float invincibilityTime=1;
+    bool invincible = false;
     // Start is called before the first frame update
 
 
@@ -17,8 +19,13 @@ public class playerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             //we take damage
-            GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().changeFuel(fuelLoss);
-
+            if (!invincible) {
+                GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().changeFuel(fuelLoss);
+                invincible = true;
+                StartCoroutine(ExampleCoroutine());
+            }
+            Destroy(collision.gameObject);
+            
         }
         
     }
@@ -46,6 +53,19 @@ public class playerHealth : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+    }
+
+    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(invincibilityTime);
+
+        //After we have waited 5 seconds print the time again.
+        
+        invincible = false;
     }
 
 }

@@ -6,6 +6,8 @@ public class bulletScript : MonoBehaviour
 {
     public float lifeTime=10;
     public float damage;
+    public GameObject groundHitParticle;
+    public Color particleColor;
     [Space]
     public int bouncetimes=1;
     public bool ExplodedsOnImpact;
@@ -36,6 +38,10 @@ public class bulletScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        GameObject go = Instantiate(groundHitParticle,transform.position,Quaternion.identity);
+        go.GetComponent<ParticleSystem>().startColor = particleColor;
+
         if (bouncetimes<=1||collision.gameObject.tag=="enemy") {
             hit = true;
             rb.velocity = Vector2.zero;
@@ -50,7 +56,7 @@ public class bulletScript : MonoBehaviour
                     Vector2 direction = obj.transform.position - transform.position;
                     obj.GetComponent<Rigidbody2D>().AddForce(direction * explosionForce);
                     obj.GetComponent<EnemyAI>().takeDamage(gameObject);
-                    print("take damage");
+                    
                 }
             }
             Destroy(gameObject);

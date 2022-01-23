@@ -395,6 +395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelLoss: -5
   coinScore: 100
+  weaponPickupScore: 1000
+  invincibilityTime: 1.5
 --- !u!95 &1182619165079024011
 Animator:
   serializedVersion: 4

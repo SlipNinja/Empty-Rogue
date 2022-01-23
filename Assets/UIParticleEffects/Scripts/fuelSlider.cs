@@ -7,7 +7,9 @@ public class fuelSlider : MonoBehaviour
 {
     public float maxFuel;
     public float fuel;
+    public float pityFuel=5;
     public Slider slider;
+    public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,12 @@ public class fuelSlider : MonoBehaviour
         else {
             fuel = maxFuel;
             slider.value = fuel;
+        }
+
+        //checks if we lose
+        if (fuel<=0-pityFuel)
+        {
+            loseScreen.SetActive(true);
         }
     }
 

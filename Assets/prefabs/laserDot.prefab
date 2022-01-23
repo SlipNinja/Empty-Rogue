@@ -289,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 10
   damage: 10
+  groundHitParticle: {fileID: 5062208430785890638, guid: 786965aade0fc7546a8b7a9ac38374c2, type: 3}
+  particleColor: {r: 0, g: 0.7607844, b: 1, a: 1}
   bouncetimes: 1
   ExplodedsOnImpact: 0
   explosion: {fileID: 0}
