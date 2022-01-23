@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        FindObjectOfType<AudioManager>().play("combatMusic");
+        StartCoroutine(seemlessLoop());
     }
 
     void Update()
@@ -34,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            FindObjectOfType<AudioManager>().play("jump");
         }
 
         if (context.canceled && rb.velocity.y > 0f)
@@ -70,8 +76,18 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal!=0)
         {
             animator.Play("playeranimation");
+            int r = Random.Range(0, 6);
+            FindObjectOfType<AudioManager>().play("footsteps" + r);
         }
         
             
     }
-}
+
+    IEnumerator seemlessLoop()
+    {
+
+        yield return new WaitForSeconds(98.526f);
+        FindObjectOfType<AudioManager>().play("seemless loop");
+    }
+
+    }

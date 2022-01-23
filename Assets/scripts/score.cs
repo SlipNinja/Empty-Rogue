@@ -18,6 +18,8 @@ public class score : MonoBehaviour
     {
         scoretext = GetComponent<TextMeshProUGUI>();
         textSize = scoretext.fontSize;
+
+
     }
 
     

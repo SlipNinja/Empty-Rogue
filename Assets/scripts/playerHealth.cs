@@ -23,6 +23,7 @@ public class playerHealth : MonoBehaviour
                 GameObject.FindGameObjectWithTag("fuel").GetComponent<fuelSlider>().changeFuel(fuelLoss);
                 invincible = true;
                 StartCoroutine(ExampleCoroutine());
+                FindObjectOfType<AudioManager>().play("takeDamage");
             }
             Destroy(collision.gameObject);
             
@@ -35,6 +36,8 @@ public class playerHealth : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("score").GetComponent<score>().updateScore(coinScore);
             Destroy(collision.gameObject);
+            FindObjectOfType<AudioManager>().play("coinCollect");
+
         } else if (collision.gameObject.tag == "weapon")
         {
             //equip new weapon

@@ -29,6 +29,8 @@ public class EnemyAI : MonoBehaviour
     //how long without los before we stop chasing the player
     public float timeToStopChasing;
     [Header("Enemy Health")]
+    public string[] deathSounds;
+    public string[] damageSounds;
     public Slider healthSlider;
     public GameObject explosion;
     public float screenshakeAmount;
@@ -250,10 +252,14 @@ public class EnemyAI : MonoBehaviour
         
         if (health <= 0)
         {
+            //enemy dies
             rb.velocity = Vector2.zero;
             StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime, screenshakeAmount));
             Instantiate(explosion, transform.position, explosion.transform.rotation);
-            
+            //plays sound
+            int r = Random.Range(0, deathSounds.Length);
+            FindObjectOfType<AudioManager>().play(deathSounds[r]);
+            //handles stuff 
             GetComponent<SpriteRenderer>().sprite = null;
             healthSlider.gameObject.SetActive(false);
             weapon.gameObject.SetActive(false);
@@ -263,7 +269,11 @@ public class EnemyAI : MonoBehaviour
             
             Destroy(gameObject,0.1f);
         }
-        else { StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime / 2, screenshakeAmount / 2)); }
+        else {
+            StartCoroutine(GameObject.FindGameObjectWithTag("screenshake").GetComponent<screenshake>().Shake(screenshakeTime / 2, screenshakeAmount / 2));
+            int r = Random.Range(0, damageSounds.Length);
+            FindObjectOfType<AudioManager>().play(damageSounds[r]);
+        }
     }
 
 }

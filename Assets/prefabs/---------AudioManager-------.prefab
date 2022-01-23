@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7196070025080514464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7196070025080514470}
+  - component: {fileID: 7196070025080514465}
+  m_Layer: 0
+  m_Name: ---------AudioManager-------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7196070025080514470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196070025080514464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.63454, y: 4.2235336, z: 12.898535}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7196070025080514465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196070025080514464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ee001e7ae4f8d41a76756b15dc4b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: takeDamage
+    clip: {fileID: 8300000, guid: 74c595c33f6aab140a5c04fa2d08b775, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: coinCollect
+    clip: {fileID: 8300000, guid: cf5a9b3d821015849a3e4839060ea348, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: desthSound
+    clip: {fileID: 8300000, guid: 3c7e519f955349a488e851dd64e59393, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyDeath1
+    clip: {fileID: 8300000, guid: 3ec8d98c5affb0c49b299a4351b57373, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyDeath2
+    clip: {fileID: 8300000, guid: 84ecdc0c1d459f543b1a420b391eeaba, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyDeath3
+    clip: {fileID: 8300000, guid: 27ae4cbbd796c2645ae3c5136df6e482, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyHit1
+    clip: {fileID: 8300000, guid: 21f25b24bba702f47bbba939651e6ad8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyHit2
+    clip: {fileID: 8300000, guid: 3859eae9440ad2b438f13e52f60427d9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyHit3
+    clip: {fileID: 8300000, guid: 53f2293f66286b44a9a34b52ef4976d9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyHit4
+    clip: {fileID: 8300000, guid: b14aba5a7056d4a4285e960e45ba2d09, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footsteps1
+    clip: {fileID: 8300000, guid: 4abb9248f09930c4cafe50e063c88416, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footsteps2
+    clip: {fileID: 8300000, guid: f31ec19a456a653439926c0cec2123de, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footsteps3
+    clip: {fileID: 8300000, guid: 974d1fbf9188fa24d8e7decce362587e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footsteps4
+    clip: {fileID: 8300000, guid: a2132aadbe6999b40ac991d997b1466d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footsteps5
+    clip: {fileID: 8300000, guid: a37130e90d684ca4e8a7ae063c2889cd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: fuelRefill
+    clip: {fileID: 8300000, guid: bda5514c8e48e6a4e8af6b5e01f0bcff, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gunShot
+    clip: {fileID: 8300000, guid: 2710fee7d1405b74cbbb7c674c9eaa3f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: humanHit1
+    clip: {fileID: 8300000, guid: 17f8e59aea3459d45ae6f1758aa80a1e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: humanHit2
+    clip: {fileID: 8300000, guid: b2b47101d26e37148923dc5b55319963, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: humanHit3
+    clip: {fileID: 8300000, guid: abf4ed6a22f21dd40b9e1ce1057aaf81, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: humanHit4
+    clip: {fileID: 8300000, guid: 7305cefb66f36aa439c784fca07da1d0, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: jump
+    clip: {fileID: 8300000, guid: 10bd851ff4c9d3548adb7054a3e63c0b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: laserShot
+    clip: {fileID: 8300000, guid: f7e686bb134d3c6458b8d9a99b730863, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combatMusic
+    clip: {fileID: 8300000, guid: e84a1c27bd9cd2642b2aa19955feac7a, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: menuMusic
+    clip: {fileID: 8300000, guid: e722b99375f081940bce2412e1fd8bf4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: startGame
+    clip: {fileID: 8300000, guid: 35f41fe389588014fb9518c8202ac2d0, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walkingMachine
+    clip: {fileID: 8300000, guid: fbce64d3659ddef4b965ed29a9ca7429, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: grenadeLauncherExplosion
+    clip: {fileID: 8300000, guid: 1d51342c8eac6d241a77e64c640180be, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: grenadeLauncherFire
+    clip: {fileID: 8300000, guid: b67e56664271fc946be2ab79876f0adc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rayGun
+    clip: {fileID: 8300000, guid: 8444984f9269e464f8f4243f75137dfc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sword1
+    clip: {fileID: 8300000, guid: d68ab201cafef154c9f8e7ed65b85af3, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sword2
+    clip: {fileID: 8300000, guid: d55ddc724a9a945459994b99203c9672, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: seemless loop
+    clip: {fileID: 8300000, guid: f7e19ffca53dfca4e89d56f128ed1bc0, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

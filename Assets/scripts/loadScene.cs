@@ -11,10 +11,35 @@ public class loadScene : MonoBehaviour
 
     public void loadLevel()
     {
+
+
+
+        //play audio
+        FindObjectOfType<AudioManager>().play("startGame");
+
+
+        Invoke("loadLevelWithDelay", 2.5f);
+        
+
+        
+
+
+        
+
+    }
+
+    public void loadLevelWithDelay()
+    {
         if (!loadThisLevel)
         {
             SceneManager.LoadScene(levelToLoad);
+            
         }
-        else { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+        }
     }
+
 }

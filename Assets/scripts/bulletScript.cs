@@ -15,6 +15,7 @@ public class bulletScript : MonoBehaviour
     public float explosionRadius;
     public float explosionForce;
     public float explosionDamage;
+    
     public LayerMask enemyLayer;
     Rigidbody2D rb;
     bool hit;
@@ -50,8 +51,9 @@ public class bulletScript : MonoBehaviour
             {
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,explosionRadius, enemyLayer);
-                
-                foreach(Collider2D obj in objects)
+                FindObjectOfType<AudioManager>().play("grenadeLauncherExplosion");
+
+                foreach (Collider2D obj in objects)
                 {
                     Vector2 direction = obj.transform.position - transform.position;
                     obj.GetComponent<Rigidbody2D>().AddForce(direction * explosionForce);

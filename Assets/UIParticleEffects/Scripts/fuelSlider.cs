@@ -36,6 +36,10 @@ public class fuelSlider : MonoBehaviour
             fuel = maxFuel;
             slider.value = fuel;
         }
+        if (change>0)
+        {
+            FindObjectOfType<AudioManager>().play("fuelRefill");
+        }
 
         //checks if we lose
         if (fuel<=0-pityFuel)

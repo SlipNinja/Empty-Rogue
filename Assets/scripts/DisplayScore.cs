@@ -15,7 +15,22 @@ public class DisplayScore : MonoBehaviour
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("score").GetComponent<score>().Score;
-        Invoke("extraStep",1f);
+        //sounds
+        FindObjectOfType<AudioManager>().play("desthSound");
+
+        foreach (AudioSource sound in FindObjectOfType<AudioManager>().gameObject.GetComponents<AudioSource>())
+        {
+            
+
+            if (sound.clip.name == "robot combat MUSIC Loop")
+            {
+
+                sound.Stop();
+            }
+        }
+
+        //loads up menu with delay
+        Invoke("extraStep",1.5f);
     }
 
     void extraStep()

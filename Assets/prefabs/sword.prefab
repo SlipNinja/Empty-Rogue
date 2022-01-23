@@ -167,6 +167,10 @@ MonoBehaviour:
   launchForce: 2
   shotPoint: {fileID: 4728229192734346047}
   Firerate: 0.5
+  sounds:
+  - sword1
+  - sword2
+  loop: 0
   point: {fileID: 5408061181929196915, guid: 992263d7366f16b4e8ad8c563c660a6b, type: 3}
   numberOfPoints: 0
   spaceBetweenPoints: 0.025

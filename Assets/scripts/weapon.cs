@@ -12,6 +12,10 @@ public class weapon : MonoBehaviour
     public Transform shotPoint;
     public float Firerate;
     float timeSinceLastShot;
+    [Header("sound")]
+    public string[] sounds;
+    public bool loop = false;
+    private AudioClip clip;
 
     [Header("aiming trajectory values")]
     public GameObject point;
@@ -95,10 +99,37 @@ public class weapon : MonoBehaviour
 
     public void shoot()
     {
+        
+
+        if (loop)
+        {
+            
+            foreach (AudioSource sound in FindObjectOfType<AudioManager>().gameObject.GetComponents<AudioSource>())
+            {
+                
+                
+                if (sound.clip.name == "Ray-Gun loop")
+                {
+                    
+                    if (!sound.isPlaying)
+                    {
+                        FindObjectOfType<AudioManager>().play(sounds[0]);
+                    }
+                }
+            }
+        }
+
         if (Firerate<timeSinceLastShot) {
+            //we have shot
             GameObject newBullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = transform.right * launchForce;
             timeSinceLastShot = 0;
+            
+            //plays attack sound defined in inspector
+            if (sounds.Length>0&&!loop) {
+                int r = Random.Range(0, sounds.Length);
+                FindObjectOfType<AudioManager>().play(sounds[r]);
+            }
         }
     }
 

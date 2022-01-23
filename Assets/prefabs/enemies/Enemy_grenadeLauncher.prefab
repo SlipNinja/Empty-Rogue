@@ -223,6 +223,15 @@ MonoBehaviour:
   weapon: {fileID: 5916771314823624023, guid: b981070cc3c6744449de90dc96422155, type: 3}
   weaponscript: {fileID: 0}
   timeToStopChasing: 3
+  deathSounds:
+  - enemyDeath1
+  - enemyDeath2
+  - enemyDeath3
+  damageSounds:
+  - enemyHit1
+  - enemyHit2
+  - enemyHit3
+  - enemyHit4
   healthSlider: {fileID: 5624298427053624192}
   explosion: {fileID: 4817874253256996599, guid: 32f974668bd8ec64cb0be292575aee11, type: 3}
   screenshakeAmount: 0.4
