@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal!=0)
         {
             animator.Play("playeranimation");
-            int r = Random.Range(0, 5);
+            int r = Random.Range(1, 6);
             FindObjectOfType<AudioManager>().play("footsteps" + r);
         }
         

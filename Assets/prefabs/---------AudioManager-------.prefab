@@ -107,7 +107,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: footsteps1
     clip: {fileID: 8300000, guid: 4abb9248f09930c4cafe50e063c88416, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -119,13 +119,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: footsteps3
     clip: {fileID: 8300000, guid: 974d1fbf9188fa24d8e7decce362587e, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: footsteps4
     clip: {fileID: 8300000, guid: a2132aadbe6999b40ac991d997b1466d, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

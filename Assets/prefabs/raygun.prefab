@@ -135,7 +135,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1586868686698976852, guid: 468ccde0d58b260469bbfcd39d8d90d2, type: 3}
   launchForce: 50
   shotPoint: {fileID: 7794591506326918975}
-  Firerate: 0.1
+  Firerate: 0.3
   sounds:
   - rayGun
   loop: 1

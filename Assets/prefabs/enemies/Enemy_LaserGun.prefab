@@ -391,7 +391,7 @@ MonoBehaviour:
   speed: 3
   jumpHeight: 5
   jumpCooldown: 2
-  health: 100
+  health: 75
   fuelOnDeath: 10
   scoreOnDeath: 500
   AttackDistance: 10
