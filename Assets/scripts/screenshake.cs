@@ -16,6 +16,7 @@ public class screenshake : MonoBehaviour
 
     public IEnumerator Shake (float duration, float magnitude)
     {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<followPlayer>().shaking=true;
         Vector3 originalPos =(Vector3) cam.position;
 
         float elapsed = 0.0f;
@@ -31,7 +32,9 @@ public class screenshake : MonoBehaviour
 
             yield return null;
         }
-
-        cam.position = originalPos;
+        
+        cam.localPosition = new Vector3(0,0,-10);
+        
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<followPlayer>().shaking = false;
     }
 }

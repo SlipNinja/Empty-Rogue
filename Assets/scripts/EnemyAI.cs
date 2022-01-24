@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         //raycast from ontop of the enemy
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         Vector2 Direction = playerPos - (Vector2)LOSpoint.position;
-        RaycastHit2D ray = Physics2D.Raycast(LOSpoint.position, Direction, 10f);
+        RaycastHit2D ray = Physics2D.Raycast(LOSpoint.position, Direction, 20f);
 
         //if we see the player then start chasing him
         if (ray.collider != false)
@@ -94,8 +94,9 @@ public class EnemyAI : MonoBehaviour
     {
         //patrols the area of a platform
         rb.velocity = new Vector2(direction * speed, rb.velocity.y);
-        RaycastHit2D ray = Physics2D.Raycast(groundcheck.position, Vector2.down);
-        if (ray.collider == false)
+        RaycastHit2D ray = Physics2D.Raycast(groundcheck.position, Vector2.down,1);
+        RaycastHit2D raySide = Physics2D.Raycast(groundcheck.position, Vector2.right, 0.5f);
+        if (ray.collider == false&&raySide==false)
         {
             if (direction == 1)
             {
@@ -107,6 +108,14 @@ public class EnemyAI : MonoBehaviour
                 direction = 1;
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
+        }//jump
+        else {
+            if(timeSinceLastJumped > jumpCooldown)
+            {
+                rb.AddForce(Vector2.up * jumpHeight);
+                timeSinceLastJumped = 0;
+            }
+            else { timeSinceLastJumped += Time.deltaTime; }
         }
     }
 
@@ -175,14 +184,16 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        RaycastHit2D ray = Physics2D.Raycast(groundcheck.position, Vector2.down,0.5f);
+        RaycastHit2D ray2 = Physics2D.Raycast(groundcheck.position, Vector2.down,0.5f);
+
         
-        if (timeSinceLastJumped>jumpCooldown&&ray.collider == true && shouldJump(playerPos))
+        if (timeSinceLastJumped>jumpCooldown&&ray2.collider == true && shouldJump(playerPos))
         {
             
             //we are standing on the edge of something so we jump
             rb.AddForce(Vector2.up* jumpHeight);
             timeSinceLastJumped = 0;
+            
         }
         //we just move from side to side
         else
@@ -201,7 +212,7 @@ public class EnemyAI : MonoBehaviour
             
         }
 
-
+        
         return false;
     }
 
